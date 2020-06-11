@@ -1,0 +1,33 @@
+<div class="dashboard">
+
+    <div class="container">
+        <h1 class="title">High Charts Assignment</h1>
+    </div>
+    <div class="container">
+        <div class="inputs">
+            <input type="text" [(ngModel)]='apiUrl' placeholder="Enter API url(s) here ">
+           <button (click)="addApiUrl()">Add </button>
+            <button (click)="buildChart()">Build Chart</button>
+            <mat-form-field>
+                <select matNativeControl required [formControl]="selectFormControl" [(ngModel)]="selectedY">
+                    <option label="--select y axis names --"></option>
+                    <option value="close">Close</option>
+                    <option value="mid">Mid</option>
+                  </select>
+        
+              </mat-form-field>
+        </div>
+        
+    </div>
+<div class="container">
+    <highcharts-chart
+    [Highcharts]="Highcharts"
+    [options] = "chartOptions"
+    [(update)] = "updateChartFromButton"
+
+    style="width: 80%; height: 500px; display: block; margin: 0 auto; padding-top: 60px;"></highcharts-chart>
+</div>
+<div class="container">
+    <button class="clear-button" (click)="clearChart()">Clear</button>
+</div>
+</div>

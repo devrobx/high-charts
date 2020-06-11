@@ -1,0 +1,57 @@
+
+
+.dashboard {
+    background-color: var(--darkGray);
+    width: 100%;
+    min-height: 100vh;
+}
+
+.title {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    font-size: 2rem;
+    color: var(--white);
+    padding-top: 20px;
+}
+
+input {
+    border: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+select {
+    width: 80px;
+    height: 20px;
+}
+button {
+    border: none;
+    padding: 10px 20px;
+    background-color: var(--blue);
+    margin-right: 10px;
+    transition: background-color .2s;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--teal);
+}
+
+.inputs {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.clear-button {
+   text-align: center;
+    margin: 10px auto;
+    display: block;
+    background-color: yellow;
+}
+
+.clear-button:hover {
+    background-color: var(--white);
+}
