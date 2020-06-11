@@ -18,7 +18,6 @@ export class DashboardComponent implements OnInit {
   selectedY: string;
   yAxisNames : any[] = ['close', 'mid']
 
-  apiKey: string = 'Bs_1yjTHb-zZgn8Zi7G-'
 
 
   title: string = 'Point Marker Chart'
@@ -95,10 +94,11 @@ export class DashboardComponent implements OnInit {
    
     Promise.all(this.apiArray.map (url =>
      this._http.getData(url).subscribe( data =>{
-       console.log(data)
+     
        const arrayOfData = data.dataset.data
-       console.log(arrayOfData[0][1])
+      
        for(let i=0;i< this.limit;i++) { this.xData.push(arrayOfData[i][0])}
+       
        if(this.selectedY == 'mid'){
         for(let i=0;i< this.limit;i++) { this.yData.push(((arrayOfData[i][2]+arrayOfData[i][3])/2))}
        }else{
